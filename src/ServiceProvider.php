@@ -4,18 +4,16 @@ declare(strict_types=1);
 
 namespace PreemStudio\Categories;
 
-use Spatie\LaravelPackageTools\Commands\InstallCommand;
-use Spatie\LaravelPackageTools\Package;
-use Spatie\LaravelPackageTools\PackageServiceProvider;
+use PreemStudio\Jetpack\Package\AbstractServiceProvider;
+use PreemStudio\Jetpack\Package\Package;
 
-class ServiceProvider extends PackageServiceProvider
+class ServiceProvider extends AbstractServiceProvider
 {
     public function configurePackage(Package $package): void
     {
         $package
             ->name('laravel-categories')
             ->hasConfigFile('laravel-categories')
-            ->hasMigration('create_categories_tables')
-            ->hasInstallCommand(fn (InstallCommand $command) => $command->publishConfigFile());
+            ->hasMigration('create_categories_tables');
     }
 }
