@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace Tests\Unit;
+namespace Tests;
 
 use Illuminate\Foundation\Auth\User;
 use PreemStudio\Categories\Concerns\HasCategories;
 
-class ClassThatHasCategories extends User
+final class ClassThatHasCategories extends User
 {
     use HasCategories;
 

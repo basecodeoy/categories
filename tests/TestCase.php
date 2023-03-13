@@ -8,6 +8,7 @@ use Illuminate\Database\Schema\Blueprint;
 use Kalnoy\Nestedset\NestedSet;
 use Orchestra\Testbench\TestCase as OrchestraTestCase;
 use PreemStudio\Categories\ServiceProvider;
+use Spatie\LaravelData\LaravelDataServiceProvider;
 
 abstract class TestCase extends OrchestraTestCase
 {
@@ -46,6 +47,9 @@ abstract class TestCase extends OrchestraTestCase
 
     protected function getPackageProviders($app): array
     {
-        return [ServiceProvider::class];
+        return [
+            LaravelDataServiceProvider::class,
+            ServiceProvider::class,
+        ];
     }
 }

@@ -12,7 +12,7 @@ use Kalnoy\Nestedset\NodeTrait;
 use Spatie\Sluggable\HasSlug;
 use Spatie\Sluggable\SlugOptions;
 
-class Category extends Model
+final class Category extends Model
 {
     use HasSlug;
     use NodeTrait;
@@ -51,6 +51,6 @@ class Category extends Model
 
     public function getTable(): string
     {
-        return Config::get('laravel-categories.tables.categories');
+        return Config::get('categorizable.tables.categories');
     }
 }

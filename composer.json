@@ -1,11 +1,11 @@
 {
-    "name": "preemstudio/laravel-categories",
+    "name": "preemstudio/laravel-categorizable",
     "description": "A package to easily use categories with Laravel.",
     "license": "MIT",
     "keywords": [
         "PreemStudio",
         "laravel",
-        "laravel-categories"
+        "laravel-categorizable"
     ],
     "authors": [
         {
@@ -14,7 +14,7 @@
             "role": "Developer"
         }
     ],
-    "homepage": "https://github.com/preemstudio/laravel-categories",
+    "homepage": "https://github.com/preemstudio/laravel-categorizable",
     "require": {
         "php": "^8.2",
         "illuminate/contracts": "^10.0",

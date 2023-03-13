@@ -1,9 +1,9 @@
 # Laravel Categories
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/preemstudio/laravel-categories.svg?style=flat-square)](https://packagist.org/packages/preemstudio/laravel-categories)
-[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/preemstudio/laravel-categories/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/preemstudio/laravel-categories/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/preemstudio/laravel-categories/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/preemstudio/laravel-categories/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/preemstudio/laravel-categories.svg?style=flat-square)](https://packagist.org/packages/preemstudio/laravel-categories)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/preemstudio/laravel-categorizable.svg?style=flat-square)](https://packagist.org/packages/preemstudio/laravel-categorizable)
+[![GitHub Tests Action Status](https://img.shields.io/github/actions/workflow/status/preemstudio/laravel-categorizable/run-tests.yml?branch=main&label=tests&style=flat-square)](https://github.com/preemstudio/laravel-categorizable/actions?query=workflow%3Arun-tests+branch%3Amain)
+[![GitHub Code Style Action Status](https://img.shields.io/github/actions/workflow/status/preemstudio/laravel-categorizable/fix-php-code-style-issues.yml?branch=main&label=code%20style&style=flat-square)](https://github.com/preemstudio/laravel-categorizable/actions?query=workflow%3A"Fix+PHP+code+style+issues"+branch%3Amain)
+[![Total Downloads](https://img.shields.io/packagist/dt/preemstudio/laravel-categorizable.svg?style=flat-square)](https://packagist.org/packages/preemstudio/laravel-categorizable)
 
 A package to easily use categories with Laravel.
 
@@ -12,20 +12,20 @@ A package to easily use categories with Laravel.
 You can install the package via composer:
 
 ```bash
-composer require preemstudio/laravel-categories
+composer require preemstudio/laravel-categorizable
 ```
 
 You can publish and run the migrations with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-categories-migrations"
+php artisan vendor:publish --tag="laravel-categorizable-migrations"
 php artisan migrate
 ```
 
 You can publish the config file with:
 
 ```bash
-php artisan vendor:publish --tag="laravel-categories-config"
+php artisan vendor:publish --tag="laravel-categorizable-config"
 ```
 
 ## Usage
