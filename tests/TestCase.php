@@ -6,11 +6,9 @@ namespace Tests;
 
 use Illuminate\Database\Schema\Blueprint;
 use Kalnoy\Nestedset\NestedSet;
-use Orchestra\Testbench\TestCase as OrchestraTestCase;
-use PreemStudio\Categories\ServiceProvider;
-use Spatie\LaravelData\LaravelDataServiceProvider;
+use PreemStudio\Jetpack\TestBench\AbstractPackageTestCase;
 
-abstract class TestCase extends OrchestraTestCase
+abstract class TestCase extends AbstractPackageTestCase
 {
     protected function getEnvironmentSetUp($app): void
     {
@@ -45,11 +43,8 @@ abstract class TestCase extends OrchestraTestCase
         });
     }
 
-    protected function getPackageProviders($app): array
+    protected function getServiceProviderClass(): string
     {
-        return [
-            LaravelDataServiceProvider::class,
-            ServiceProvider::class,
-        ];
+        return \PreemStudio\Categories\ServiceProvider::class;
     }
 }
