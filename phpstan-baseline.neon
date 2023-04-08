@@ -1,0 +1,31 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Call to an undefined method Illuminate\\\\Database\\\\Eloquent\\\\Collection\\<int, PreemStudio\\\\Categories\\\\Models\\\\Category\\>\\:\\:toTree\\(\\)\\.$#"
+			count: 1
+			path: src/Models/Category.php
+
+		-
+			message: "#^Method PreemStudio\\\\Categories\\\\Models\\\\Category\\:\\:categories\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\MorphTo does not specify its types\\: TRelatedModel, TChildModel$#"
+			count: 1
+			path: src/Models/Category.php
+
+		-
+			message: "#^Method PreemStudio\\\\Categories\\\\Models\\\\Category\\:\\:entries\\(\\) return type with generic class Illuminate\\\\Database\\\\Eloquent\\\\Relations\\\\MorphToMany does not specify its types\\: TRelatedModel$#"
+			count: 1
+			path: src/Models/Category.php
+
+		-
+			message: "#^Method PreemStudio\\\\Categories\\\\Models\\\\Category\\:\\:getTable\\(\\) should return string but returns mixed\\.$#"
+			count: 1
+			path: src/Models/Category.php
+
+		-
+			message: "#^Property 'name' does not exist in PreemStudio\\\\Categories\\\\Models\\\\Category model\\.$#"
+			count: 1
+			path: src/Models/Category.php
+
+		-
+			message: "#^Property 'slug' does not exist in PreemStudio\\\\Categories\\\\Models\\\\Category model\\.$#"
+			count: 1
+			path: src/Models/Category.php
