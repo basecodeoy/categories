@@ -8,6 +8,9 @@ use Illuminate\Database\Schema\Blueprint;
 use Kalnoy\Nestedset\NestedSet;
 use PreemStudio\Jetpack\TestBench\AbstractPackageTestCase;
 
+/**
+ * @internal
+ */
 abstract class TestCase extends AbstractPackageTestCase
 {
     protected function getEnvironmentSetUp($app): void
@@ -15,12 +18,12 @@ abstract class TestCase extends AbstractPackageTestCase
         $app['config']->set('database.default', 'testbench');
 
         $app['config']->set('database.connections.testbench', [
-            'driver'   => 'sqlite',
+            'driver' => 'sqlite',
             'database' => ':memory:',
-            'prefix'   => '',
+            'prefix' => '',
         ]);
 
-        $app['db']->connection()->getSchemaBuilder()->create('users', function (Blueprint $table) {
+        $app['db']->connection()->getSchemaBuilder()->create('users', function (Blueprint $table): void {
             $table->bigIncrements('id');
             $table->string('name');
             $table->string('email');
@@ -28,7 +31,7 @@ abstract class TestCase extends AbstractPackageTestCase
             $table->timestamps();
         });
 
-        $app['db']->connection()->getSchemaBuilder()->create('categories', function (Blueprint $table) {
+        $app['db']->connection()->getSchemaBuilder()->create('categories', function (Blueprint $table): void {
             $table->increments('id');
             $table->string('name');
             $table->string('slug');
@@ -37,7 +40,7 @@ abstract class TestCase extends AbstractPackageTestCase
             $table->timestamps();
         });
 
-        $app['db']->connection()->getSchemaBuilder()->create('model_has_categories', function (Blueprint $table) {
+        $app['db']->connection()->getSchemaBuilder()->create('model_has_categories', function (Blueprint $table): void {
             $table->integer('category_id');
             $table->morphs('model');
         });

@@ -15,7 +15,7 @@ trait HasCategories
         return $this->morphToMany(
             Config::get('categories.models.category'),
             'model',
-            'model_has_categories'
+            'model_has_categories',
         );
     }
 
@@ -38,7 +38,7 @@ trait HasCategories
         return $this;
     }
 
-    public function removeCategory($category)
+    public function removeCategory($category): void
     {
         $this->categories()->detach($this->getStoredCategory($category));
     }
@@ -52,7 +52,7 @@ trait HasCategories
 
     public function hasCategory($categories)
     {
-        if (is_string($categories)) {
+        if (\is_string($categories)) {
             return $this->categories->contains('name', $categories);
         }
 
@@ -60,7 +60,7 @@ trait HasCategories
             return $this->categories->contains('id', $categories->id);
         }
 
-        if (is_array($categories)) {
+        if (\is_array($categories)) {
             foreach ($categories as $category) {
                 if ($this->hasCategory($category)) {
                     return true;
@@ -80,7 +80,7 @@ trait HasCategories
 
     public function hasAllCategories($categories)
     {
-        if (is_string($categories)) {
+        if (\is_string($categories)) {
             return $this->categories->contains('name', $categories);
         }
 
@@ -97,11 +97,11 @@ trait HasCategories
 
     protected function getStoredCategory($category): Category
     {
-        if (is_numeric($category)) {
+        if (\is_numeric($category)) {
             return Category::findById($category);
         }
 
-        if (is_string($category)) {
+        if (\is_string($category)) {
             return Category::findByName($category);
         }
 

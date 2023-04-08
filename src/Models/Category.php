@@ -31,17 +31,17 @@ final class Category extends Model
 
     public static function tree(): array
     {
-        return static::get()->toTree()->toArray();
+        return self::get()->toTree()->toArray();
     }
 
     public static function findByName(string $name): self
     {
-        return static::where('name', $name)->orWhere('slug', $name)->firstOrFail();
+        return self::where('name', $name)->orWhere('slug', $name)->firstOrFail();
     }
 
     public static function findById(int $id): self
     {
-        return static::findOrFail($id);
+        return self::findOrFail($id);
     }
 
     public function getSlugOptions(): SlugOptions
