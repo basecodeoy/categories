@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace Tests\Unit\Models;
 
-use Illuminate\Database\Eloquent\Relations\MorphTo;
 use BombenProdukt\Categories\Models\Category;
+use Illuminate\Database\Eloquent\Relations\MorphTo;
 use Tests\TestCase;
 
 /**

@@ -4,9 +4,9 @@ declare(strict_types=1);
 
 namespace BombenProdukt\Categories\Concerns;
 
+use BombenProdukt\Categories\Models\Category;
 use Illuminate\Database\Eloquent\Relations\MorphToMany;
 use Illuminate\Support\Facades\Config;
-use BombenProdukt\Categories\Models\Category;
 
 trait HasCategories
 {
