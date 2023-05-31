@@ -19,16 +19,6 @@ final class Category extends Model
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
-    public function categories(): MorphTo
-    {
-        return $this->morphTo();
-    }
-
-    public function entries(string $class): MorphToMany
-    {
-        return $this->morphedByMany($class, 'model', 'model_has_categories');
-    }
-
     public static function tree(): array
     {
         return self::get()->toTree()->toArray();
@@ -42,6 +32,16 @@ final class Category extends Model
     public static function findById(int $id): self
     {
         return self::findOrFail($id);
+    }
+
+    public function categories(): MorphTo
+    {
+        return $this->morphTo();
+    }
+
+    public function entries(string $class): MorphToMany
+    {
+        return $this->morphedByMany($class, 'model', 'model_has_categories');
     }
 
     public function getSlugOptions(): SlugOptions
